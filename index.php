@@ -6,6 +6,13 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+            <style>
+            
+                #caixaCadastro,
+                #caixaRecuperarSenha,
+                #alerta { display:none;}
+            
+            </style>
             
             <title>Sistema de Login TNX Systems</title>
     
@@ -60,7 +67,7 @@
                                                             <input type="checkbox" name="lembra" id="lembrar" class="custom-control-input">
                                                             <label for="lembrar" class=custom-control-label>   Lembrar de Mim </label>
                                                   
-                                                            <a href="#" id="btnEsquci" class="float-right" > 
+                                                            <a href="#" id="btnEsqueci" class="float-right" > 
                                                             
                                                                     Esqueceu a Senha?
                                                             
@@ -118,7 +125,7 @@
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
                 <label for="concordar"class="custom-control-label">
-                    Eu concordo com os <a href="#"> termos e confições.</a>
+                    Eu concordo com os <a href="#"> Termos e Condições.</a>
                                 </label>
             </div>
             </div>
@@ -142,20 +149,98 @@
                             
                             </div>
                             
+                           
                             </form>
 
                         </div>
                     
                     
                     
-                    </section>                
+                    </section>               
+
+
+
+
+                    <section class="row mb-5">
+                    
+                        <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaRecuperarSenha">
+
+                            <h2 class="text-center"> Gerar Nova Senha </h2>
+                            <form action="#" id="formSenha" > 
+
+                                    <div class="form-group">
+
+                                        <small class="text-muted"> 
+                                        Para Gerar uma Nova Senha, Digite seu E-mail 
+                                        e Receba as Instruções...
+                                       </small>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="email" name="emailSenha" id="emailSenha" class="form-control" placeholder="E-mail" required>
+                                    </div>
+                                    
+                                    <div class="form-group"></div>
+                                        <input type="submit" value=":: Enviar e-mail ::" id="btnEnviarEmail" class="btn btn-primary btn-block">
+                                    <div class="form-group"></div>
+
+
+                                    <div class=" form-group float-right">
+                            
+                                         <a href="#" id="btnVoltar"> Voltar </a>
+                        
+                                      </div>
+
+                             </form>
+                        </div>
+
+                    
+                    </section>
+
+
 
             </main>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <script> 
+                // jQuery
+                $(function(){
+                    $("#btnEsqueci").click(function(){
+                        $("#caixaLogin").hide();
+                        $("#caixaRecuperarSenha").show();
+                    });
 
+                        //Voltar a Tela de login Inverção da de sima
+                    $("#btnVoltar").click(function(){
+
+                        $("#caixaLogin").show();
+                        $("#caixaRecuperarSenha").hide();
+
+                    });
+
+                    $("#btnCadastrar").click(function(){
+                        
+                        $("#caixaCadastro").show();
+                        $("#caixaLogin").hide();
+                        
+                        
+                    })
+
+                     $("#btnJaCadastrado").click(function(){
+                        
+                        $("#caixaCadastro").hide(); //esconde
+                        $("#caixaLogin").show(); //mostra
+                        
+                        
+                    })
+
+
+
+                });
+            </script>
         </body>
 
     </html>
