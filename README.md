@@ -2,9 +2,8 @@
 Sistema de Login com registro de novo usuário e recuperação de senha
 
 
-
 ## aula05 - 23/08/2019
-Criação de Banco de Dados e Cadastro de Usuário
+Criação de Banco de Dados e ~Cadastro de Usuário~
 
 
 ## aula04 - 15/08/2019

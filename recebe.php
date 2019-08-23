@@ -32,6 +32,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'cadastro') {
     echo "<h5>Senha Confirma: $senhaConfirma</h5>";
     echo "<h5>Concordar: $concordar</h5>";
     echo "<h5>Data: $dataCriacao</h5>";
+
+    if($senha != $senhaC){
+        echo "<h1> As senhas não conferem</h1>";
+    exit();
+    }else{ 
+        echo "<h5> Senha codificada: $senha</h5>";
+    }
+    
+
+
+
 } else {
     echo "<h1 style = 'color:tomato'> Esta Pagina Não Pode ser acessada Diretamente</h2>";
 }
