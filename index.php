@@ -65,7 +65,7 @@
         <section class="row mb-5">
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaCadastro">
                 <h2 class="text-center">Cadastro de Usuário</h2>
-                <form action="post" class="p-2" id="formCadastro">
+                <form action="#" class="p-2" id="formCadastro">
                     <div class="form-group">
                         <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minlength="5">
                     </div>
@@ -154,15 +154,14 @@
                 }
             });
 
-
             $('#btnRegistrar').click(function(e) {
                 let formCadastro = document.querySelector("#formCadastro");
                 if (formCadastro.checkValidity()) {
-                    e.preventDefault(); //Não recarregar a página
+                    e.preventDefault(); //Não recarregar a página 
                     $.ajax({
                         url: 'recebe.php',
                         method: 'post',
-                        data: $('#formCadastro').serialize() + '&action=Cadastro',
+                        data: $('#formCadastro').serialize() + '&action=cadastro',
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html("resposta:" + resposta);
@@ -170,16 +169,15 @@
                     });
                 }
             });
-
 
             $('#btnEnviarEmail').click(function(e) {
                 let formSenha = document.querySelector("#formSenha");
                 if (formSenha.checkValidity()) {
-                    e.preventDefault(); //Não recarregar a página
+                    e.preventDefault(); //Não recarregar a página 
                     $.ajax({
                         url: 'recebe.php',
                         method: 'post',
-                        data: $('#formSenha').serialize() + '&action=Email',
+                        data: $('#formSenha').serialize() + '&action=senha',
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html("resposta:" + resposta);
@@ -188,11 +186,10 @@
                 }
             });
 
-
             //Formulário de Cadastro de usuário
-
+            $('#btnRegistrar').click(function(e) {});
             //Formulário para mudar de senha
-
+            $('#btnEnviarEmail').click(function(e) {});
             //Trocar da Tela de Login para Recuperar Senha
             $("#btnEsqueci").click(function() {
                 $("#caixaLogin").hide();
@@ -227,7 +224,11 @@
                 }
             });
         });
-
+        /*
+         * Translated default messages for the jQuery validation plugin.
+         * Locale: PT_BR
+         * https://gist.github.com/diegoprates/5047663
+         */
         jQuery.extend(jQuery.validator.messages, {
             required: "Este campo &eacute; requerido.",
             remote: "Por favor, corrija este campo.",

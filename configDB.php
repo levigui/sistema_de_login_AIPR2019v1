@@ -1,16 +1,16 @@
-<?php   
-//config.php
+<?php
+//confiDB.php
 
-//Dados para escolha do DataBase (DB)
-
+//Dados para escolha do DataBase(DB)
 $dbhost = "localhost";
-$dbuser = "root";  //Usuário Raíz (RUTE)
+$dbuser = "root";
 $dbpass = "";
 $dbname = "sistemaDeLogin";
 
-//conexão com o Banco de Dados
+//Conexão com o banco de dados 
 $conecta = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-if($conecta->connect_error){ die("Nãum foi possiível se conectar ao Banco de Dados: " . $conecta->connect_error);}
-else{
-        echo "<h1>Conectou no BD Manoow!</h1>";
+if ($conecta->connect_error) {
+    die("Não foi possível conectar ao Banco de Dados: " . $conecta->connect_error);
+} else {
+    //echo "<h1>Conectou no BD Manowww!</h1>";
 }
