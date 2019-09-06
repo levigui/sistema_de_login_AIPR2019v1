@@ -1,7 +1,8 @@
 <?php
-//protegendo profile.php só para usuários logados
+//Protegendo profile.php só para usuários logados
 require_once 'session.php';
 ?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -13,13 +14,13 @@ require_once 'session.php';
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Perfil De <?= $usuario ?> </title>
+    <title>Perfil de <?= $usuario ?></title>
 </head>
 
 <body class="bg-dark">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">INTZ leviGui Systems </a>
+        <a class="navbar-brand" href="#">LeviGui Systems</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,28 +40,38 @@ require_once 'session.php';
                         <?= $usuario ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Configuração</a>
+                        <a class="dropdown-item" href="#">Configurações</a>
                         <a class="dropdown-item" href="sair.php">Sair</a>
-                        <a class="dropdown-item" href="https://br.lolesports.com/times/intz/jogadores">INTZ</a>
+                        <a class="dropdown-item" href="https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwj2tNzQ8rzkAhXpLLkGHbWaDv4QPAgD">Google</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <main class="container mt-4" >
-
-        <h1 class="text-light">Perfil de Usuário</h1>
-        <h1 class="text-light">Nome: <?= $nome ?> </h1>
-        <h1 class="text-light">E-mail: <?= $email ?></h1>
-        <h1 class="text-light">Data de Cadastro: <?= $dataCriacao ?></h1>
 
 
-    </main>
 
-    <main class="container mt-4">
-        <h1 class="text-light">Perfil de Usuário</h1>
-    </main>
+
+    <div class=" mt-4 container ">
+        <div class="row">
+            <div class="col-9 border border-primary bg-primary mb-5">
+                <h1 class="text-light  mt-4  font-weight-bolder text-center mb-5 ">Perfil do <?= $usuario ?></h1>
+            </div>
+            <div class="col-4 border border-primary  bg-light "> <img src="<?= $imagemUsuario ?>" alt="Avatar" width="200" height="200"></div>
+            <div class="col-6 border border-primary  text-monospace bg-primary">
+                <h2 class="text-light mt-2 ">Nome: <?= $nome ?></h2>
+                <h2 class="text-light">E-mail: <?= $email ?></h2>
+                <h2 class="text-light ">Data de Cadastro: <?= date('d/m/Y H:i:s', strtotime($dataCriacao)) ?></h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
