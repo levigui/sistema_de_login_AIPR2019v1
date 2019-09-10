@@ -58,7 +58,7 @@ require_once 'session.php';
             <div class="col-9 border border-primary bg-primary mb-5">
                 <h1 class="text-light  mt-4  font-weight-bolder text-center mb-5 ">Perfil do <?= $usuario ?></h1>
             </div>
-            <div class="col-4 border border-primary  bg-light "> <img src="<?= $imagemUsuario ?>" alt="Avatar" width="200" height="200"></div>
+            <div class="col-4 border border-primary  bg-light "> <img src="<?= $imagemUsuario ?>" alt="Avatar" width="250" height="200"></div>
             <div class="col-6 border border-primary  text-monospace bg-primary">
                 <h2 class="text-light mt-2 ">Nome: <?= $nome ?></h2>
                 <h2 class="text-light">E-mail: <?= $email ?></h2>
